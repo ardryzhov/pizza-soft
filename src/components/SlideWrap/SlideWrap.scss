@@ -1,0 +1,17 @@
+.filter__button-wrap {
+	position: absolute;
+	left: 0px;
+	top: 0;
+	height: 100vh;
+	background-color: rgba(44, 44, 44, 0.9);
+	width: 55px;
+	transition: 0.3s all;
+
+	.filter__button_close-btn {
+		padding-top: 30px;
+	}
+
+	&.open__wrap {
+		width: 200px;
+	}
+}

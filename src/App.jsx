@@ -1,11 +1,24 @@
 import React from 'react'
-import './App.css'
+import './App.scss'
 
-import data from './assets/data/employees.json'
+import MainPage from './pages/MainPage'
+import UserPage from './pages/UserPage'
+
+import { Routes, Route, Link } from 'react-router-dom'
 
 const App = () => {
-	console.log('data: ', data)
-	return <div className='app-wrap'>Hello from App.jsx</div>
+	return (
+		<div className='app-wrap'>
+			<div style={{ display: 'flex', flexDirection: 'column' }}>
+				<Link to='/'>Main</Link>
+				<Link to='/user'>UserPage</Link>
+			</div>
+			<Routes>
+				<Route path='/' element={<MainPage />} />
+				<Route path='/user' element={<UserPage />} />
+			</Routes>
+		</div>
+	)
 }
 
 export default App
