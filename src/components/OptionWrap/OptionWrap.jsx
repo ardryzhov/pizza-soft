@@ -3,17 +3,12 @@ import './OptionWrap.scss'
 
 import FilterFields from '../FilterFields'
 import SortFields from '../SortFields'
-import {
-	onlyArchive,
-	defaultUsers,
-	setOptionUsers,
-} from '../../redux/usersSlice'
+import { defaultUsers, setOptionUsers } from '../../redux/usersSlice'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const OptionWrap = ({ isActive }) => {
 	const dispatch = useDispatch()
-	const sortedUsers = useSelector((state) => state.users.sortedUsers)
 
 	const [selected, setSelected] = useState(null)
 	const [role, setRole] = useState(null)
@@ -51,13 +46,8 @@ const OptionWrap = ({ isActive }) => {
 			: !checked && !roleEng && !sortTag
 			? dispatch(setOptionUsers({}))
 			: false
-
-		// console.log('checked: ', checked)
-		// console.log('roleEnd: ', roleEng)
-		// console.log('sortTag:', sortTag)
-
-		// dispatch(onlyArchive())
 	}
+
 	const toDefaultUser = () => {
 		dispatch(defaultUsers())
 		setSelected(null)

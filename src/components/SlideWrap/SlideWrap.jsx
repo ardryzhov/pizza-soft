@@ -8,6 +8,7 @@ const SlideWrap = () => {
 	const [isActive, setActive] = useState(false)
 	const classes = ['filter__slide-wrap']
 	if (isActive) classes.push('open__wrap')
+
 	return (
 		<div className={classes.join(' ')}>
 			<div className='filter__slide-close'>

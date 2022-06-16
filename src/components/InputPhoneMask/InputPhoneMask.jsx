@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
 import './InputPhoneMask.scss'
 
-const InputPhoneMask = ({
-	errorPhone,
-	setErrorPhone,
-	phone,
-	setPhone,
-	setFormError,
-}) => {
+const InputPhoneMask = ({ setErrorPhone, phone, setPhone }) => {
 	const [phoneValue, setPhoneValue] = useState(phone || '')
 	const [key, setKey] = useState('')
 
@@ -53,7 +47,6 @@ const InputPhoneMask = ({
 
 	return (
 		<input
-			// TODO: Если phoneError == true добавить класс этому инпуту и выделить его как ошибку
 			value={phoneValue}
 			maxLength='17'
 			type='text'

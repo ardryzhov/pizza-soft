@@ -89,21 +89,17 @@ const EditUserInfo = ({
 				<div className='edit__user-item'>
 					<label htmlFor=''>Телефон:</label>
 					<InputPhoneMask
+						setErrorPhone={setErrorPhone}
 						phone={phone}
 						setPhone={setPhone}
-						errorPhone={errorPhone}
-						setErrorPhone={setErrorPhone}
-						setFormError={setFormError}
 					/>
 				</div>
 				<div className='edit__user-item'>
 					<label htmlFor=''>Дата рождения:</label>
 					<InputDateMask
 						setErrorDate={setErrorDate}
-						errorDate={errorDate}
 						birthday={birthday}
 						setBirthday={setBirthday}
-						setFormError={setFormError}
 					/>
 				</div>
 				<div className='edit__user-item'>

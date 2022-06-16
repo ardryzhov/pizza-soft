@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './UserList.scss'
 
-import { useSelector } from 'react-redux'
 import UserItem from '../UserItem/UserItem'
-import { chooseUser } from '../../redux/usersSlice'
 
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
 
 const UserList = () => {
 	const users = useSelector((state) => state.users.data)

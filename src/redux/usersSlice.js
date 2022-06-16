@@ -51,17 +51,11 @@ const usersSlice = createSlice({
 			})
 		},
 		setOptionUsers(state, action) {
-			// action: {isArchive: true, role: roleTag('Водитель/Официант/Повар'), sort: sortTag('По имени/По дате рождения')}
 			const payload = action.payload
 
 			const hasIsArchive = payload.hasOwnProperty('isArchive')
 			const hasRoleTag = payload.hasOwnProperty('roleTag')
 			const hasSortTag = payload.hasOwnProperty('sortTag')
-
-			// console.log(payload)
-			// console.log('hasIsArchive', hasIsArchive)
-			// console.log('hasRoleTag', hasRoleTag)
-			// console.log('hasSortTag', hasSortTag)
 
 			if (hasIsArchive && !hasRoleTag && !hasSortTag) {
 				state.sortedUsers = state.data.filter((v) => {
