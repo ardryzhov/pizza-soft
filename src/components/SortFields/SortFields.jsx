@@ -1,23 +1,39 @@
 import React from 'react'
-import './SortFields.scss'
+import './SortFields'
 
-const SortFields = ({ value, selected, setSelected }) => {
+import SortItemField from '../SortItemField'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClose } from '@fortawesome/free-solid-svg-icons'
+
+const SortFields = ({ selected, setSelected }) => {
+	const toDefaultSelect = (e) => {
+		e.stopPropagation()
+		setSelected(null)
+	}
+
 	return (
-		<div
-			className='modern-radio-container'
-			onClick={() => {
-				setSelected(value)
-			}}
-		>
-			<div className={`radio-outer-circle ${value !== selected && 'unselected'}`}>
-				<div
-					className={`radio-inner-circle ${
-						value !== selected && 'unselected-circle'
-					}`}
-				/>
+		<div className='sort__options'>
+			<div className='sort__option_role-title'>
+				<h5>Сортировать по:</h5>
+				{selected && (
+					<div className='default__sort' onClick={toDefaultSelect}>
+						<FontAwesomeIcon className='default__sort_icon' icon={faClose} />
+					</div>
+				)}
 			</div>
-			<div className={`helper-text ${value == selected && 'selected-text'}`}>
-				{value}
+
+			<div className='sort__field_role'>
+				<SortItemField
+					value={'Имени'}
+					selected={selected}
+					setSelected={setSelected}
+				/>
+				<SortItemField
+					value={'Дате'}
+					selected={selected}
+					setSelected={setSelected}
+				/>
 			</div>
 		</div>
 	)

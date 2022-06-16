@@ -1,0 +1,11 @@
+.error__block-wrap {
+	width: 250px;
+	height: 75px;
+	display: flex;
+	align-items: center;
+	.error__block-message {
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: red;
+	}
+}

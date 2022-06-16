@@ -1,7 +1,13 @@
 import React from 'react'
 
+import EditUserInfo from '../components/EditUserInfo'
+
 const UserPage = () => {
-	return <div>Hello UserPage.jsx</div>
+	return (
+		<div>
+			<EditUserInfo />
+		</div>
+	)
 }
 
 export default UserPage

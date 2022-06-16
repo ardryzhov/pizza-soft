@@ -1,17 +1,18 @@
-.filter__button-wrap {
+.filter__slide-wrap {
 	position: absolute;
 	left: 0px;
 	top: 0;
-	height: 100vh;
-	background-color: rgba(44, 44, 44, 0.9);
+	background-color: rgba(15, 15, 15, 0.9);
 	width: 55px;
-	transition: 0.3s all;
+	transition: 0.3s;
+	border-bottom-right-radius: 20px;
+	// transition: 0.3s linear;
 
-	.filter__button_close-btn {
-		padding-top: 30px;
+	.filter__slide-close {
+		padding: 30px 0;
 	}
 
 	&.open__wrap {
-		width: 200px;
+		width: 190px;
 	}
 }

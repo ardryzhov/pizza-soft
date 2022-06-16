@@ -11,23 +11,46 @@
 		transition-delay: 0s;
 		transition: 0.1s;
 		opacity: 0;
+		pointer-events: none;
+		.archive__checkbox {
+		}
 	}
-	.sort__option {
+	.sort__options {
 		margin: 1rem 0 0.5rem;
 		position: relative;
-		h5 {
-			margin: 0.2rem 0;
-			text-align: center;
-			color: #fff;
+
+		.sort__option_role-title {
+			width: 90%;
+			margin: 0 auto;
+			position: relative;
+			h5 {
+				margin: 0.2rem 0;
+				text-align: center;
+				color: #fff;
+			}
 		}
 		.default__sort {
 			position: absolute;
-			right: -5px;
-			top: 0px;
+			right: -17px;
+			top: 25%;
 			cursor: pointer;
 			.default__sort_icon {
 				color: red;
 			}
+		}
+	}
+
+	.archive__checkbox {
+		margin: 5px 0px;
+		width: 100px;
+
+		label {
+			color: #fff;
+		}
+
+		input {
+			width: 25px;
+			background: red;
 		}
 	}
 

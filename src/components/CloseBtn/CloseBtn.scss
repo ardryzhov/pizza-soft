@@ -2,9 +2,9 @@
 	display: block;
 	width: 30px;
 	height: 20px;
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
+	position: absolute;
+	right: 15px;
+	top: 20px;
 	cursor: pointer;
 	overflow: hidden;
 	.navbar__burger {

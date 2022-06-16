@@ -44,6 +44,8 @@
 		"react-redux": "^8.0.2",
 		"react-router-dom": "^6.3.0",
 		"react-spring": "^9.4.5",
+		"react-text-mask": "^5.4.3",
+		"redux-persist": "^6.0.0",
 		"styled-component": "^2.8.0",
 		"styled-components": "^5.3.5"
 	}

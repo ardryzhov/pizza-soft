@@ -6,11 +6,11 @@ import OptionWrap from '../OptionWrap'
 
 const SlideWrap = () => {
 	const [isActive, setActive] = useState(false)
-	const classes = ['filter__button-wrap']
+	const classes = ['filter__slide-wrap']
 	if (isActive) classes.push('open__wrap')
 	return (
 		<div className={classes.join(' ')}>
-			<div className='filter__button_close-btn'>
+			<div className='filter__slide-close'>
 				<CloseBtn isActive={isActive} onClose={() => setActive(!isActive)} />
 
 				<div className='option__btns'>
