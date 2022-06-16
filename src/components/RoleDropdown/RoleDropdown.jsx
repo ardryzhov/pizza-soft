@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './RoleDropdown.scss'
 
 import { useOutside } from '../../hooks'
@@ -6,11 +6,17 @@ import { useOutside } from '../../hooks'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
 
-const RoleDropdown = ({ optionSelect, setRole }) => {
-	const [option, setOption] = useState(optionSelect || '')
+const RoleDropdown = ({ role, setRole }) => {
+	const [option, setOption] = useState(role || '')
 	const { ref, isShow, setShow } = useOutside(false)
 
-	const role = ['Водитель', 'Повар', 'Официант']
+	useEffect(() => {
+		if (role === null) {
+			setOption('')
+		}
+	}, [role])
+
+	const roleRU = ['Водитель', 'Повар', 'Официант']
 
 	if (option === 'driver') {
 		setOption('Водитель')
@@ -47,7 +53,7 @@ const RoleDropdown = ({ optionSelect, setRole }) => {
 			{isShow && (
 				<div className='dropdown__list_container'>
 					<ul ref={ref} className='dropdown__list'>
-						{role.map((optionValue) => (
+						{roleRU.map((optionValue) => (
 							<li
 								className='dropdown__item'
 								onClick={onOptionClicked(optionValue)}

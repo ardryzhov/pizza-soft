@@ -7,5 +7,14 @@
 		font-size: 1.1rem;
 		font-weight: 600;
 		color: red;
+
+		@media screen and (max-width: 510px) {
+			font-size: 0.7rem;
+		}
+	}
+
+	@media screen and (max-width: 510px) {
+		width: 150px;
+		height: 50px;
 	}
 }

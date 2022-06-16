@@ -6,11 +6,9 @@ const CloseBtn = ({ isActive, onClose }) => {
 
 	if (isActive) classes.push('active__burger')
 	return (
-		<>
-			<div onClick={onClose} className={classes.join(' ')}>
-				<span></span>
-			</div>
-		</>
+		<div onClick={onClose} className={classes.join(' ')}>
+			<span></span>
+		</div>
 	)
 }
 

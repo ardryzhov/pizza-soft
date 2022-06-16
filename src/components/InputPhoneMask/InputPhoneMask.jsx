@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import './InputPhoneMask.scss'
 
-const InputPhoneMask = ({ errorPhone, setErrorPhone, phone, setPhone }) => {
+const InputPhoneMask = ({
+	errorPhone,
+	setErrorPhone,
+	phone,
+	setPhone,
+	setFormError,
+}) => {
 	const [phoneValue, setPhoneValue] = useState(phone || '')
 	const [key, setKey] = useState('')
 

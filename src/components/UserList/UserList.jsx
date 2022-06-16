@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './UserList.scss'
 
 import { useSelector } from 'react-redux'
@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux'
 
 const UserList = () => {
 	const users = useSelector((state) => state.users.data)
+	const sortedUsers = useSelector((state) => state.users.sortedUsers)
 
 	return (
 		<div className='user__list-wrap'>
@@ -19,14 +20,14 @@ const UserList = () => {
 				</div>
 
 				<div className='user__list-add-new'>
-					<Link to='/new'>Добавить нового сотрудника</Link>
+					<Link to='/new-user'>Добавить нового сотрудника</Link>
 				</div>
 			</div>
 
 			<div className='user__list-items'>
-				{users.map((item) => (
-					<UserItem key={item.id} {...item} />
-				))}
+				{sortedUsers.length
+					? sortedUsers.map((item) => <UserItem key={item.id} {...item} />)
+					: users.map((item) => <UserItem key={item.id} {...item} />)}
 			</div>
 		</div>
 	)

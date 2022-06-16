@@ -7,6 +7,7 @@ const InputDateMask = ({
 	birthday,
 	setBirthday,
 	requiredFields,
+	setFormError,
 }) => {
 	const [dateValue, setDateValue] = useState(birthday || '')
 	const [key, setKey] = useState(null)
@@ -55,7 +56,7 @@ const InputDateMask = ({
 	const getError = (e) => {
 		const value = e.target.value
 		if (value.match(/^\d{2}\.\d{2}\.\d{4}$/) === null && value.length === 10) {
-			console.log('getError in if')
+			onBlurError()
 			setErrorDate(true)
 			// requiredFields()
 			return ''

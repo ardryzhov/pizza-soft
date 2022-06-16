@@ -6,6 +6,7 @@ import UserPage from './pages/UserPage'
 
 import { Routes, Route, Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import NewUserPage from './pages/NewUserPage'
 
 const App = () => {
 	const x = useSelector((state) => state.users)
@@ -19,6 +20,7 @@ const App = () => {
 			<Routes>
 				<Route path='/' element={<MainPage />} />
 				<Route path='/user' element={<UserPage />} />
+				<Route path='/new-user' element={<NewUserPage />} />
 			</Routes>
 		</div>
 	)
