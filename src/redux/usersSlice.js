@@ -86,7 +86,7 @@ const usersSlice = createSlice({
 			}
 			if (!hasIsArchive && hasRoleTag && hasSortTag) {
 				state.sortedUsers = state.data.filter((v) => {
-					if (v.isArchive && v.role === payload.roleTag) return v
+					if (v.role === payload.roleTag) return v
 				})
 				state.sortedUsers = state.sortedUsers
 					.slice()
@@ -95,6 +95,15 @@ const usersSlice = createSlice({
 			}
 			if (!hasIsArchive && !hasRoleTag && hasSortTag) {
 				state.sortedUsers = state.data
+					.slice()
+					.sort((a, b) => sortByTag(a, b, payload))
+				return
+			}
+			if (hasIsArchive && !hasRoleTag && hasSortTag) {
+				state.sortedUsers = state.data.filter((v) => {
+					if (v.isArchive) return v
+				})
+				state.sortedUsers = state.sortedUsers
 					.slice()
 					.sort((a, b) => sortByTag(a, b, payload))
 				return
