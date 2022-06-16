@@ -43,6 +43,8 @@ const OptionWrap = ({ isActive }) => {
 			? dispatch(setOptionUsers({ roleTag: roleEng, sortTag }))
 			: !checked && !roleEng && sortTag
 			? dispatch(setOptionUsers({ sortTag }))
+			: checked && !roleEng && sortTag
+			? dispatch(setOptionUsers({ isActive: checked, sortTag }))
 			: !checked && !roleEng && !sortTag
 			? dispatch(setOptionUsers({}))
 			: false
